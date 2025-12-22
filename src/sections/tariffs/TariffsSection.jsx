@@ -62,17 +62,11 @@ export function TariffsSection() {
                 <div className="tariffs__footer">
                     <p className="tariffs__footer-text">
                         <span className="tariffs__footer-line tariffs__footer-line--first">
-                            Все цены указаны без НДС.
-                        </span>
-                        <span className="tariffs__footer-line tariffs__footer-line--second">
-                            Минимальный заказ — 10 часов.
-                        </span>
-                        <span className="tariffs__footer-line tariffs__footer-line--third">
-                            Оплата по факту выполненных работ.
+                            Вам не подходят наши тарифы? Оставьте заявку и мы предложим вам индивидуальные условия!
                         </span>
                     </p>
                     <button className="tariffs__footer-link" onClick={goToContacts}>
-                        Связаться с нами
+                        получить индивидуальный тариф
                     </button>
                 </div>
             </div>

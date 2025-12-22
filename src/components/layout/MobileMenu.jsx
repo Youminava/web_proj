@@ -1,5 +1,6 @@
 import React from 'react'
 import { mobileNavItems } from '../../data/navigation'
+import logo from '../../assets/img/logo.png'
 
 export function MobileMenu({ isOpen, onClose, onContactClick }) {
     return (
@@ -7,14 +8,17 @@ export function MobileMenu({ isOpen, onClose, onContactClick }) {
             <div className="mobile-menu__backdrop" onClick={onClose} />
 
             <div className="mobile-menu__panel">
-                <button
-                    type="button"
-                    className="mobile-menu__close"
-                    onClick={onClose}
-                    aria-label="Закрыть меню"
-                >
-                    ✕
-                </button>
+                <div className="mobile-menu__header">
+                    <img src={logo} alt="Logo" className="mobile-menu__logo" />
+                    <button
+                        type="button"
+                        className="mobile-menu__close"
+                        onClick={onClose}
+                        aria-label="Закрыть меню"
+                    >
+                        ✕
+                    </button>
+                </div>
 
                 <nav className="mobile-menu__nav">
                     {mobileNavItems.map((item) => (
@@ -29,13 +33,15 @@ export function MobileMenu({ isOpen, onClose, onContactClick }) {
                     ))}
                 </nav>
 
-                <button
-                    type="button"
-                    className="btn mobile-menu__contact-btn"
-                    onClick={onContactClick}
-                >
-                    Связь с нами
-                </button>
+                <div className="mobile-menu__footer">
+                    <button
+                        type="button"
+                        className="btn mobile-menu__contact-btn"
+                        onClick={onContactClick}
+                    >
+                        Связь с нами
+                    </button>
+                </div>
             </div>
         </div>
     )
