@@ -24,19 +24,17 @@ export function ContactSection() {
 
             <div className="container contact__inner">
                 <div className="contact__info">
-                    <h2 className="contact__title">Контакты</h2>
-                    <p className="contact__text">{renderWithLineBreaks('Свяжитесь с нами для консультации\nпо поддержке вашего Drupal сайта')}</p>
+                    <h2 className="contact__title">Оставить заявку на поддержку сайта</h2>
+                    <p className="contact__text">{renderWithLineBreaks('Срочно нужна поддержка сайта? Ваша команда не успевает справиться\nсамостоятельно или предыдущий подрядчик не справился с работой?\nТогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!')}</p>
 
                     <div className="contact__links">
-                        <a className="contact__link contact__link--phone" href={contactPhoneHref}>
-                            <img src={contactIconPhone} alt="" className="contact__icon" />
-                            <span>{contactPhone}</span>
-                        </a>
+                        <div className="contact__link contact__link--phone">
+                            <span>8 800 222-26-73</span>
+                        </div>
 
-                        <a className="contact__link" href={contactEmailHref}>
-                            <img src={contactIconMail} alt="" className="contact__icon" />
-                            <span className="contact__mail">{contactEmail}</span>
-                        </a>
+                        <div className="contact__link">
+                            <span className="contact__mail">info@drupal-coder.ru</span>
+                        </div>
                     </div>
                 </div>
 
@@ -44,8 +42,8 @@ export function ContactSection() {
             </div>
 
             <div className="contact__footnote container">
-                <p>Все права защищены.</p>
-                <p>2025 Drupal Coder</p>
+                <p>Проект ООО «Инитлаб», Краснодар, Россия.</p>
+                <p>Drupal является зарегистрированной торговой маркой Dries Buytaert.</p>
             </div>
         </section>
     )
