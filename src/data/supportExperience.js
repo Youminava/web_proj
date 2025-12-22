@@ -12,61 +12,61 @@ import analyticsImgEn from '../assets/img/laptop-en.png'
 export const supportExperienceCards = [
     {
         num: '01.',
-        titleKey: 'supportExperience.cards.c1.title',
-        textKey: 'supportExperience.cards.c1.text',
+        title: 'Консультации',
+        text: 'Профессиональные консультации по Drupal',
         bg: cardBg1,
     },
     {
         num: '02.',
-        titleKey: 'supportExperience.cards.c2.title',
-        textKey: 'supportExperience.cards.c2.text',
+        title: 'Разработка',
+        text: 'Создание и доработка модулей',
         bg: cardBg2,
     },
     {
         num: '03.',
-        titleKey: 'supportExperience.cards.c3.title',
-        textKey: 'supportExperience.cards.c3.text',
+        title: 'Интеграция',
+        text: 'Интеграция с внешними системами',
         bg: cardBg3,
     },
     {
         num: '04.',
-        titleKey: 'supportExperience.cards.c4.title',
-        textKey: 'supportExperience.cards.c4.text',
+        title: 'Оптимизация',
+        text: 'Ускорение и оптимизация сайтов',
         bg: cardBg4,
     },
     {
         num: '05.',
-        titleKey: 'supportExperience.cards.c5.title',
-        textKey: 'supportExperience.cards.c5.text',
+        title: 'Безопасность',
+        text: 'Аудит и обеспечение безопасности',
         bg: cardBg5,
     },
     {
         num: '06.',
-        titleKey: 'supportExperience.cards.c6.title',
-        textKey: 'supportExperience.cards.c6.text',
+        title: 'Миграция',
+        text: 'Миграция и обновление Drupal',
         bg: cardBg6,
     },
     {
         num: '07.',
-        titleKey: 'supportExperience.cards.c7.title',
-        textKey: 'supportExperience.cards.c7.text',
+        title: 'Поддержка',
+        text: 'Техническая поддержка 24/7',
         bg: cardBg7,
     },
     {
         num: '08.',
-        titleKey: 'supportExperience.cards.c8.title',
-        textKey: 'supportExperience.cards.c8.text',
+        title: 'SEO',
+        text: 'Оптимизация для поисковых систем',
         bg: cardBg8,
     },
 ];
 
-export const supportExperienceTitleKey = 'supportExperience.title'
+export const supportExperienceTitle = 'Наш опыт в поддержке Drupal'
 
-export const expertiseTitleKey = 'supportExperience.expertiseTitle'
+export const expertiseTitle = 'Экспертиза'
 
 export const expertisePoints = [
-    'supportExperience.expertisePoints.p1',
-    'supportExperience.expertisePoints.p2',
+    'Более 10 лет опыта',
+    'Сотни успешных проектов',
 ]
 
 export const analyticsImageRu = analyticsImgRu

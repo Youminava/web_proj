@@ -2,19 +2,16 @@ import React from 'react'
 
 import druplicon from '/src/assets/img/druplicon.svg'
 import {
-    analyticsImageEn,
     analyticsImageRu,
     expertisePoints,
-    expertiseTitleKey,
+    expertiseTitle,
     supportExperienceCards,
-    supportExperienceTitleKey,
+    supportExperienceTitle,
 } from '../../data/supportExperience'
 import { renderWithLineBreaks } from '../../utils/text'
-import { useTranslation } from 'react-i18next'
 
 export function SupportExperienceSection() {
-    const { t, i18n } = useTranslation()
-    const analyticsImage = i18n.language === 'en' ? analyticsImageEn : analyticsImageRu
+    const analyticsImage = analyticsImageRu
     return (
         <section className="section support-exp" id="support-exp">
             <div className="container">
@@ -23,7 +20,7 @@ export function SupportExperienceSection() {
                 
                 <div className="support-exp__top">
                     <h2 className="support-exp__title">
-                        {renderWithLineBreaks(t(supportExperienceTitleKey))}
+                        {renderWithLineBreaks(supportExperienceTitle)}
                     </h2>
 
                     <div className="support-exp__grid">
@@ -31,8 +28,8 @@ export function SupportExperienceSection() {
                             <article key={i} className="support-exp__card">
                                 <img src={card.bg} alt="" className="support-exp__card-bg" />
                                 <div className="support-exp__num">{card.num}</div>
-                                <h3 className="support-exp__card-title">{renderWithLineBreaks(t(card.titleKey))}</h3>
-                                <p className="support-exp__card-text">{renderWithLineBreaks(t(card.textKey))}</p>
+                                <h3 className="support-exp__card-title">{renderWithLineBreaks(card.title)}</h3>
+                                <p className="support-exp__card-text">{renderWithLineBreaks(card.text)}</p>
                             </article>
                         ))}
                     </div>
@@ -46,7 +43,7 @@ export function SupportExperienceSection() {
 
                     <div className="support-exp__info">
                         <h2 className="support-exp__info-title">
-                            {renderWithLineBreaks(t(expertiseTitleKey))}
+                            {renderWithLineBreaks(expertiseTitle)}
                         </h2>
 
                         <div className="support-exp__info-grid">
@@ -54,7 +51,7 @@ export function SupportExperienceSection() {
                                 <div className="support-exp__info-item" key={index}>
                                     <div className="support-exp__info-line" />
                                     <p className="support-exp__info-text">
-                                        {renderWithLineBreaks(t(point))}
+                                        {renderWithLineBreaks(point)}
                                     </p>
                                 </div>
                             ))}
