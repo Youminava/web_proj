@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { partners } from '../../data/partners'
-import { useTranslation } from 'react-i18next'
 import { renderWithLineBreaks } from '../../utils/text'
 
 export function PartnersSection() {
-    const { t } = useTranslation()
     // удваиваем список, чтобы анимация была бесшовной
     const marqueePartners = [...partners, ...partners]
     const row1Ref = useRef(null)

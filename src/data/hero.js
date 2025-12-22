@@ -1,12 +1,12 @@
 export const heroCopy = {
-    titleKey: 'hero.title',
-    subtitleKey: 'hero.subtitle',
+    title: 'Поддержка\nсайтов на Drupal',
+    subtitle: 'Сопровождение и поддержка сайтов\nна CMS Drupal любых версий и запущенности',
 }
 
 export const heroActions = [
     {
         id: 'hero-tariffs-btn',
-        labelKey: 'hero.actions.tariffs',
+        label: 'Тарифы',
         variant: 'outline',
         href: '#tariffs',
     },
@@ -15,26 +15,26 @@ export const heroActions = [
 export const heroStats = [
     {
         num: '#1',
-        textKey: 'hero.stats.s1',
+        text: 'Drupal-разработчик\nв России по версии\nРейтинга Рунета',
     },
     {
         num: '3+',
-        textKey: 'hero.stats.s2',
+        text: 'средний опыт специалистов более\n3 лет',
     },
     {
         num: '14',
-        textKey: 'hero.stats.s3',
+        text: 'лет опыта в сфере\nDrupal',
     },
     {
         num: '200+',
-        textKey: 'hero.stats.s4',
+        text: 'модулей и тем\nв формате DrupalGive',
     },
     {
         num: '35 000',
-        textKey: 'hero.stats.s5',
+        text: 'часов поддержки\nсайтов на Drupal',
     },
     {
         num: '200+',
-        textKey: 'hero.stats.s6',
+        text: 'Проектов\nна поддержке',
     },
 ]

@@ -1,18 +1,16 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import checkIcon from '../../assets/img/check.svg'
-import { consentTextKey } from '../../data/contact'
+import { consentText } from '../../data/contact'
 import {
     clearSubmitState,
     setConsent,
     setField,
     submitContactForm,
 } from './contactFormSlice'
-import { useTranslation } from 'react-i18next'
 
-export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
+export function ContactForm({ submitLabelKey = 'Отправить' }) {
     const dispatch = useDispatch()
-    const { t } = useTranslation()
 
     const values = useSelector((s) => s.contactForm.values)
     const errors = useSelector((s) => s.contactForm.errors)
@@ -51,40 +49,40 @@ export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
                 <input
                     type="text"
                     name="name"
-                    placeholder={t('contact.form.placeholders.name')}
+                    placeholder="Ваше имя"
                     value={values.name}
                     onChange={onChangeField('name')}
                 />
             </label>
-            {errors.name && <p className="contact__error">{t(errors.name)}</p>}
+            {errors.name && <p className="contact__error">{errors.name}</p>}
 
             <label className={`contact__field ${errors.phone ? 'contact__field--error' : ''}`}>
                 <input
                     type="tel"
                     name="phone"
-                    placeholder={t('contact.form.placeholders.phone')}
+                    placeholder="Телефон"
                     value={values.phone}
                     onChange={onChangeField('phone')}
                 />
             </label>
-            {errors.phone && <p className="contact__error">{t(errors.phone)}</p>}
+            {errors.phone && <p className="contact__error">{errors.phone}</p>}
 
             <label className={`contact__field ${errors.email ? 'contact__field--error' : ''}`}>
                 <input
                     type="email"
                     name="email"
-                    placeholder={t('contact.form.placeholders.email')}
+                    placeholder="Email"
                     value={values.email}
                     onChange={onChangeField('email')}
                 />
             </label>
-            {errors.email && <p className="contact__error">{t(errors.email)}</p>}
+            {errors.email && <p className="contact__error">{errors.email}</p>}
 
             <label className="contact__field contact__field--textarea">
                 <textarea
                     name="comment"
                     rows="3"
-                    placeholder={t('contact.form.placeholders.comment')}
+                    placeholder="Комментарий"
                     value={values.comment}
                     onChange={onChangeField('comment')}
                 />
@@ -100,17 +98,17 @@ export function ContactForm({ submitLabelKey = 'contact.form.submit' }) {
                 <span className="contact__checkbox-box">
                     <img src={checkIcon} alt="" />
                 </span>
-                <span className="contact__checkbox-label">{t(consentTextKey)}</span>
+                <span className="contact__checkbox-label">{consentText}</span>
             </label>
-            {errors.consent && <p className="contact__error">{t(errors.consent)}</p>}
+            {errors.consent && <p className="contact__error">{errors.consent}</p>}
 
             <button type="submit" className="contact__submit" disabled={isLoading}>
-                {isLoading ? t('contact.form.sending') : t(submitLabelKey)}
+                {isLoading ? 'Отправка...' : submitLabelKey}
             </button>
 
-            {status === 'success' && <p className="contact__success">{t('contact.form.success')}</p>}
+            {status === 'success' && <p className="contact__success">Форма отправлена успешно!</p>}
             {status === 'error' && (
-                <p className="contact__error">{t(submitErrorMessageKey || 'contact.form.errors.submitFailed')}</p>
+                <p className="contact__error">{submitErrorMessageKey || 'Ошибка отправки'}</p>
             )}
         </form>
     )

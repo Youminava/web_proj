@@ -9,12 +9,12 @@ function validate(values) {
     const errors = { name: '', phone: '', email: '', consent: '' }
 
     if (!String(values.name || '').trim())
-        errors.name = 'contact.form.errors.nameRequired'
+        errors.name = 'Имя обязательно'
     if (!isValidPhone(String(values.phone || '').trim()))
-        errors.phone = 'contact.form.errors.phoneInvalid'
+        errors.phone = 'Неверный номер телефона'
     if (!isValidEmail(String(values.email || '').trim()))
-        errors.email = 'contact.form.errors.emailInvalid'
-    if (!values.consent) errors.consent = 'contact.form.errors.consentRequired'
+        errors.email = 'Неверный email'
+    if (!values.consent) errors.consent = 'Необходимо согласие'
 
     return errors
 }
@@ -61,7 +61,7 @@ export const submitContactForm = createAsyncThunk(
         } catch {
             return rejectWithValue({
                 kind: 'network',
-                messageKey: 'contact.form.errors.submitFailed',
+                messageKey: 'Ошибка отправки формы',
             })
         }
     },

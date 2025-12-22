@@ -12,44 +12,44 @@ export const supportItems = [
     {
         icon: competency1,
         bg: iconBg,
-        textKey: 'support.items.i1',
+        text: 'Добавление\n информации на сайт,\n создание новых\n разделов',
     },
     {
         icon: competency2,
         bg: iconBg,
-        textKey: 'support.items.i2',
+        text: 'Разработка\n и оптимизация\n модулей сайта',
     },
     {
         icon: competency3,
         bg: iconBg,
-        textKey: 'support.items.i3',
+        text: 'Интеграция с CRM,\n 1С, платежными\n системами, любыми веб-сервисами',
     },
     {
         icon: competency4,
         bg: iconBg,
-        textKey: 'support.items.i4',
+        text: 'Любые доработки\n функционала\n и дизайна',
     },
     {
         icon: competency5,
         bg: iconBg,
-        textKey: 'support.items.i5',
+        text: 'Аудит и мониторинг\n безопасности Drupal\n сайтов',
     },
     {
         icon: competency6,
         bg: iconBg,
-        textKey: 'support.items.i6',
+        text: 'Миграция, импорт\n контента и апгрейд\n Drupal',
     },
     {
         icon: competency7,
         bg: iconBg,
-        textKey: 'support.items.i7',
+        text: 'Оптимизация\n и ускорение\n Drupal-сайтов',
     },
     {
         icon: competency8,
         bg: iconBg,
-        textKey: 'support.items.i8',
+        text: 'Веб-маркетинг,\n консультации\n и работы по SEO',
     },
 ]
 
-export const supportTitleKey = 'support.title'
-export const supportSubtitleKey = 'support.subtitle'
+export const supportTitle = '13 лет совершенствуем\nкомпетенции в Drupal\n поддержке!'
+export const supportSubtitle = 'Разрабатываем и оптимизируем модули, расширяем функциональность сайтов, обновляем дизайн'

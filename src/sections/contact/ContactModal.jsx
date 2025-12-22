@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { ContactForm } from './ContactForm'
 import { rafAnimate } from './rafAnimate'
-import { useTranslation } from 'react-i18next'
 
 const DURATION_MS = 280
 
@@ -12,7 +11,6 @@ function easeOutCubic(t) {
 }
 
 export function ContactModal() {
-    const { t } = useTranslation()
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -109,7 +107,7 @@ export function ContactModal() {
     const backdropStyle = { opacity: Math.min(1, progress) }
 
     return (
-        <div className="contact-modal" role="dialog" aria-modal="true" aria-label={t('contact.modal.aria')}>
+        <div className="contact-modal" role="dialog" aria-modal="true" aria-label="Контактная форма">
             <div
                 className="contact-modal__backdrop"
                 style={backdropStyle}
@@ -121,14 +119,14 @@ export function ContactModal() {
                     type="button"
                     className="contact-modal__close"
                     onClick={close}
-                    aria-label={t('contact.modal.close')}
+                    aria-label="Закрыть"
                 >
                     ✕
                 </button>
 
-                <h2 className="contact-modal__title">{t('contact.modal.title')}</h2>
+                <h2 className="contact-modal__title">Связаться с нами</h2>
                 <p className="contact-modal__subtitle">
-                    {t('contact.modal.subtitle')}
+                    Оставьте заявку, и мы свяжемся с вами
                 </p>
 
                 <ContactForm submitLabelKey="contact.modal.send" />

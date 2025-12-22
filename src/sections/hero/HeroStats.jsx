@@ -1,10 +1,8 @@
 import React from 'react'
 import { heroStats } from '../../data/hero'
 import cupImg from '/src/assets/img/cup.png'
-import { useTranslation } from 'react-i18next'
 
 export function HeroStats() {
-    const { t } = useTranslation()
     return (
         <div className="hero-stats">
             {heroStats.map((item, index) => {
@@ -17,7 +15,7 @@ export function HeroStats() {
                         <span className="hero-stats__line" aria-hidden="true" />
                         <div className="hero-stats__content">
                             <div className="hero-stats__num">{item.num}</div>
-                            <div className="hero-stats__text">{t(item.textKey)}</div>
+                            <div className="hero-stats__text">{item.text}</div>
                         </div>
                         {isFirst && (
                             <img

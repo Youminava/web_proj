@@ -1,15 +1,15 @@
 export const mainNavItems = [
-    { id: 'support', href: '#support', labelKey: 'nav.support' },
-    { id: 'tariffs', href: '#tariffs', labelKey: 'nav.tariffs' },
-    { id: 'cases', href: '#cases', labelKey: 'nav.cases' },
-    { id: 'reviews', href: '#reviews', labelKey: 'nav.reviews' },
-    { id: 'contacts', href: '#contacts', labelKey: 'nav.contacts' },
+    { id: 'support', href: '#support', label: 'Поддержка сайтов' },
+    { id: 'tariffs', href: '#tariffs', label: 'Тарифы' },
+    { id: 'cases', href: '#cases', label: 'Наши работы' },
+    { id: 'reviews', href: '#reviews', label: 'Отзывы' },
+    { id: 'contacts', href: '#contacts', label: 'Контакты' },
 ]
 
 export const mobileNavItems = [
-    { id: 'support', href: '#support', labelKey: 'nav.support' },
-    { id: 'tariffs', href: '#tariffs', labelKey: 'nav.tariffs' },
-    { id: 'cases', href: '#cases', labelKey: 'nav.cases' },
-    { id: 'reviews', href: '#reviews', labelKey: 'nav.reviews' },
-    { id: 'contacts', href: '#contacts', labelKey: 'nav.contacts' },
+    { id: 'support', href: '#support', label: 'Поддержка сайтов' },
+    { id: 'tariffs', href: '#tariffs', label: 'Тарифы' },
+    { id: 'cases', href: '#cases', label: 'Наши работы' },
+    { id: 'reviews', href: '#reviews', label: 'Отзывы' },
+    { id: 'contacts', href: '#contacts', label: 'Контакты' },
 ]

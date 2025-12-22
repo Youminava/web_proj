@@ -4,7 +4,6 @@ import App from './app/App.jsx'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { store } from './app/store'
-import './i18n'
 
 import './styles/variables.css'
 import './styles/base.css'

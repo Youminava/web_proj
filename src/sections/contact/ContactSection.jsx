@@ -10,11 +10,9 @@ import {
     contactPhoneHref,
 } from '../../data/contact'
 import { ContactForm } from './ContactForm'
-import { useTranslation } from 'react-i18next'
 import { renderWithLineBreaks } from '../../utils/text'
 
 export function ContactSection() {
-    const { t } = useTranslation()
     return (
         <section id="contacts" className="contact">
             <div className="contact__bg contact__bg--top">
@@ -26,8 +24,8 @@ export function ContactSection() {
 
             <div className="container contact__inner">
                 <div className="contact__info">
-                    <h2 className="contact__title">{t('contact.title')}</h2>
-                    <p className="contact__text">{renderWithLineBreaks(t('contact.text'))}</p>
+                    <h2 className="contact__title">Контакты</h2>
+                    <p className="contact__text">{renderWithLineBreaks('Свяжитесь с нами для консультации\nпо поддержке вашего Drupal сайта')}</p>
 
                     <div className="contact__links">
                         <a className="contact__link contact__link--phone" href={contactPhoneHref}>
@@ -42,12 +40,12 @@ export function ContactSection() {
                     </div>
                 </div>
 
-                <ContactForm submitLabelKey="contact.form.submit" />
+                <ContactForm submitLabelKey="Отправить" />
             </div>
 
             <div className="contact__footnote container">
-                <p>{t('contact.footnote.line1')}</p>
-                <p>{t('contact.footnote.line2')}</p>
+                <p>Все права защищены.</p>
+                <p>2025 Drupal Coder</p>
             </div>
         </section>
     )

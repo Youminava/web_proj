@@ -1,10 +1,8 @@
 import React, { useMemo, useState } from 'react'
 import reviewBgShape from '../../assets/img/review-quote-bg.svg'
 import { reviews } from '../../data/reviews'
-import { useTranslation } from 'react-i18next'
 
 export function ReviewsSection() {
-    const { t } = useTranslation()
     const [current, setCurrent] = useState(0)
     const total = reviews.length
 
@@ -18,7 +16,7 @@ export function ReviewsSection() {
     return (
         <section id="reviews" className="reviews">
             <div className="container">
-                <h2 className="reviews__title">{t('reviews.title')}</h2>
+                <h2 className="reviews__title">Отзывы</h2>
 
                 <div className="reviews__wrap">
                     <div className="reviews__bg-shape" aria-hidden="true">
@@ -38,11 +36,11 @@ export function ReviewsSection() {
                                 />
 
                                 <p className="reviews__headline">
-                                    {t(review.headlineKey)}
+                                    {review.headline}
                                 </p>
 
                                 <p className="reviews__author">
-                                    {t(review.authorKey)}
+                                    {review.author}
                                 </p>
                             </div>
 

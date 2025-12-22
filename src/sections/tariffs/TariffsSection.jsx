@@ -1,9 +1,7 @@
 import React from 'react'
 import { tariffs } from '../../data/tariffs'
-import { useTranslation } from 'react-i18next'
 
 export function TariffsSection() {
-    const { t } = useTranslation()
     const goToContacts = () => {
         const el = document.getElementById('contacts')
         if (el) {
@@ -16,7 +14,7 @@ export function TariffsSection() {
     return (
         <section id="tariffs" className="section tariffs">
             <div className="container">
-                <h2 className="tariffs__title">{t('tariffs.title')}</h2>
+                <h2 className="tariffs__title">Тарифы</h2>
 
                 <div className="tariffs__cards">
                     {tariffs.map((tariff, idx) => (
@@ -28,21 +26,21 @@ export function TariffsSection() {
                             }
                         >
                             <div className="tariff-card__header">
-                                <p className="tariff-card__name">{t(tariff.nameKey)}</p>
+                                <p className="tariff-card__name">{tariff.name}</p>
                                 <p className="tariff-card__price">
                   <span className="tariff-card__price-value">
                     {tariff.price}
                   </span>
                                     <span className="tariff-card__price-currency"> ₽</span>
                                 </p>
-                                <p className="tariff-card__note">{t(tariff.noteKey)}</p>
+                                <p className="tariff-card__note">{tariff.note}</p>
                             </div>
 
                             <ul className="tariff-card__list">
-                                {tariff.featureKeys.map((f, i) => (
+                                {tariff.features.map((f, i) => (
                                     <li key={i} className="tariff-card__item">
                                         <span className="tariff-card__bullet" />
-                                        <span>{t(f)}</span>
+                                        <span>{f}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -55,7 +53,7 @@ export function TariffsSection() {
                                 }
                                 onClick={goToContacts}
                             >
-                                {t(tariff.buttonTextKey)}
+                                {tariff.buttonText}
                             </button>
                         </article>
                     ))}
@@ -64,17 +62,17 @@ export function TariffsSection() {
                 <div className="tariffs__footer">
                     <p className="tariffs__footer-text">
                         <span className="tariffs__footer-line tariffs__footer-line--first">
-                            {t('tariffs.footer.line1')}
+                            Все цены указаны без НДС.
                         </span>
                         <span className="tariffs__footer-line tariffs__footer-line--second">
-                            {t('tariffs.footer.line2')}
+                            Минимальный заказ — 10 часов.
                         </span>
                         <span className="tariffs__footer-line tariffs__footer-line--third">
-                            {t('tariffs.footer.line3')}
+                            Оплата по факту выполненных работ.
                         </span>
                     </p>
                     <button className="tariffs__footer-link" onClick={goToContacts}>
-                        {t('tariffs.footer.link')}
+                        Связаться с нами
                     </button>
                 </div>
             </div>
