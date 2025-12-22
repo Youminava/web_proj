@@ -5,7 +5,7 @@ export function CasesSection() {
     return (
         <section id="cases" className="cases">
             <div className="container">
-                <h2 className="cases__title">Наши работы</h2>
+                <h2 className="cases__title">Последние кейсы</h2>
 
                 <div className="cases__grid">
                     {cases.map((caseItem) => {
