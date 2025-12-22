@@ -1,0 +1,5 @@
+export const contactPhone = '8 800 222-26-73'
+export const contactPhoneHref = 'tel:88002222673'
+export const contactEmail = 'info@drupal-coder.ru'
+export const contactEmailHref = 'mailto:info@drupal-coder.ru'
+export const consentTextKey = 'contact.form.consent'

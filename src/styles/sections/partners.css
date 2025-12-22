@@ -1,0 +1,132 @@
+
+
+
+.partners {
+    --partners-card-width: 291px;
+    --partners-card-height: 155px;
+    --partners-gap: 20px;
+
+    background: var(--color-surface);
+    color: var(--color-text-dark);
+    padding: 160px 0 80px;
+}
+
+
+.partners__title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--main-black, #050C33);
+    margin-bottom: 12px;
+}
+
+
+.partners__subtitle {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--main-black, #050C33);
+    max-width: 760px;
+    margin: 0 auto 42px;
+}
+
+
+.partners__viewport {
+    overflow: hidden;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--partners-gap); 
+}
+
+
+.partners__row {
+    display: flex;
+    flex-wrap: nowrap;           
+    gap: var(--partners-gap);
+    align-items: center;
+    will-change: transform;
+    min-width: max-content;      
+    transform: translate3d(0, 0, 0);
+}
+
+
+.partners__row--bottom {
+    margin-top: 20px;
+}
+
+
+.partners__card {
+    flex: 0 0 var(--partners-card-width);             
+    height: var(--partners-card-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e5e7ef;
+    border-radius: 5px;
+    background: var(--color-surface);
+}
+
+
+.partners__logo {
+    max-width: 170px;
+    max-height: 80px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+@keyframes partners-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .partners {
+        padding: 60px 0 68px;
+    }
+
+    .partners__title {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .partners__subtitle {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .partners {
+        --partners-card-width: 220px;
+        --partners-card-height: 120px;
+        --partners-gap: 16px;
+        padding: 52px 0 56px;
+    }
+
+    .partners__title {
+        font-size: 32px;
+    }
+
+    .partners__subtitle {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 16px;
+    }
+
+    .partners__viewport {
+        padding: 0 4px;
+    }
+}

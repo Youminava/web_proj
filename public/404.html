@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      // Redirect all 404s to index.html for SPA routing on GitHub Pages.
+      // Based on https://github.com/rafgraph/spa-github-pages
+      ;(function (l) {
+        var segmentCount = 1 // project pages: /<repo>/
+        var base = l.pathname.split('/').slice(0, 1 + segmentCount).join('/')
+        var rest = l.pathname.split('/').slice(1 + segmentCount).join('/')
+        var newUrl =
+          l.protocol +
+          '//' +
+          l.host +
+          base +
+          '/?/' +
+          rest +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        l.replace(newUrl)
+      })(window.location)
+    </script>
+  </head>
+  <body></body>
+</html>
+

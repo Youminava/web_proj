@@ -1,0 +1,249 @@
+
+
+
+.cases {
+    background: var(--color-surface);
+    color: var(--color-text-dark);
+    padding: 72px 0 88px;
+}
+
+
+.cases__title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 60px;
+}
+
+
+.cases__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+@media (max-width: 1100px) {
+    .cases__grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .cases__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .cases {
+        padding: 56px 0 72px;
+    }
+
+    .cases__title {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .cases__grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
+
+
+.case-card {
+    position: relative;
+    height: 475px;
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    background: #f5f7fb;
+    box-shadow: 0 12px 26px rgba(5, 12, 51, 0.06);
+}
+
+
+.case-card--wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 720px) {
+    .case-card {
+        height: 420px;
+    }
+
+    .case-card--wide {
+        grid-column: span 1;
+    }
+}
+
+
+.case-card--image {
+    background: var(--color-bg-alt);
+}
+
+
+.case-card__image-wrapper {
+    position: absolute;
+    inset: 0;
+}
+
+
+.case-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.case-card__overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+
+.case-card__overlay--wide {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 55%);
+}
+
+
+.case-card__overlay--vertical {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 60%);
+}
+
+
+.case-card__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 28px 30px;
+    color: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.case-card__content--wide {
+    padding: 0 0 42px 40px;
+}
+
+
+.case-card__content--wide .case-card__title {
+    max-width: 320px;
+}
+
+
+.case-card__content--vertical {
+    padding: 0 24px 28px;
+}
+
+
+.case-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+    margin: 0 0 5px;
+}
+
+
+.case-card__date {
+    font-size: 12px;
+    font-weight: 700;
+    color: inherit;
+    opacity: 0.8;
+    margin: 0;
+}
+
+
+.case-card--description {
+    display: flex;
+    flex-direction: column;
+    background: #f5f7fb;
+    box-shadow: 0 12px 26px rgba(5, 12, 51, 0.06);
+}
+
+
+.case-card__image-wrapper--description {
+    position: relative;
+    height: 215px;
+    inset: auto;
+    overflow: hidden;
+}
+
+
+.case-card__content--description {
+    position: relative;
+    inset: auto;
+    padding: 26px 30px 28px;
+    color: var(--color-text-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+.case-card__title--dark {
+    color: var(--color-text-dark);
+    margin: 0 0 5px;
+}
+
+
+.case-card__date--dark {
+    color: var(--color-text-dark);
+    opacity: 0.5;
+    margin: 0 0 20px;
+}
+
+
+.case-card__description {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    opacity: 0.7;
+}
+
+
+.case-card__description--dark {
+    color: var(--color-text-dark);
+}
+
+
+.cases__footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.cases__show-more {
+    width: 260px;
+    height: 60px;
+    border-radius: var(--radius-xs);
+    border: 1px solid rgba(5, 12, 51, 0.2);
+    background: var(--color-surface);
+    color: var(--main-black, #050C33);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px; 
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cases__show-more:hover {
+    box-shadow: 0 10px 24px rgba(5, 12, 51, 0.12);
+    transform: translateY(-1px);
+}
+
+.cases__show-more:active {
+    transform: translateY(0);
+    opacity: 0.9;
+}

@@ -1,0 +1,26 @@
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm); 
+    border: 2px solid var(--color-accent);
+    background: var(--color-accent);
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    transition: background 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+.btn--outline {
+    background: transparent;
+    color: var(--color-text);
+}
