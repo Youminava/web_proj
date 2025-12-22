@@ -59,4 +59,12 @@ export const cases = [
         date: CASE_DATE,
         image: caseImg4,
     },
+    {
+        id: 8,
+        variant: 'description',
+        title: 'Настройка выгрузки YML для Яндекс.Маркета',
+        date: '22.04.2019',
+        description: 'Эти слова совершенно справедливы, однако гипнотический рифф продолжает паузный пласт.',
+        image: caseImg1,
+    },
 ]

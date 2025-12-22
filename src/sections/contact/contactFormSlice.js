@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const FORMCARRY_URL = 'https://formcarry.com/s/IsePPyesmqB'
 
-const isValidPhone = (value) => /^\+?[0-9\s\-()]{7,}$/.test(value)
+const isValidPhone = (value) => /^\+[0-9\s\-()]{7,}$/.test(value)
 const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
 
 function validate(values) {
@@ -10,8 +10,14 @@ function validate(values) {
 
     if (!String(values.name || '').trim())
         errors.name = 'Имя обязательно'
-    if (!isValidPhone(String(values.phone || '').trim()))
-        errors.phone = 'Неверный номер телефона'
+    const phoneValue = String(values.phone || '').trim()
+    if (!phoneValue) {
+        errors.phone = 'Номер телефона обязателен'
+    } else if (!phoneValue.startsWith('+')) {
+        errors.phone = 'Номер телефона должен начинаться с +'
+    } else if (!isValidPhone(phoneValue)) {
+        errors.phone = 'Неверный формат номера телефона'
+    }
     if (!isValidEmail(String(values.email || '').trim()))
         errors.email = 'Неверный email'
     if (!values.consent) errors.consent = 'Необходимо согласие'
