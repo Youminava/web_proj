@@ -40,7 +40,7 @@ export function ContactSection() {
                     </div>
                 </div>
 
-                <ContactForm submitLabelKey="Отправить" />
+                <ContactForm />
             </div>
 
             <div className="contact__footnote container">

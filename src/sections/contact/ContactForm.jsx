@@ -103,7 +103,7 @@ export function ContactForm() {
             {errors.consent && <p className="contact__error">{errors.consent}</p>}
 
             <button type="submit" className="contact__submit" disabled={isLoading}>
-                {isLoading ? 'Отправка...' : 'Отправить'}
+                {isLoading ? 'Отправка...' : 'Оставить заявку!'}
             </button>
 
             {status === 'success' && <p className="contact__success">Форма отправлена успешно!</p>}

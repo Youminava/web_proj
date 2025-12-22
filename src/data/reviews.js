@@ -1,4 +1,3 @@
-import winampLogo from '../assets/img/review-winamp-logo.png'
 import cablemanLogo from '../assets/img/cableman_ru.png'
 import farborsLogo from '../assets/img/farbors_ru.jpg'
 import logo0 from '../assets/img/logo_0.png'
@@ -9,13 +8,6 @@ import lpcmaLogo from '../assets/img/lpcma_rus_v4.jpg'
 import nashagazetaLogo from '../assets/img/nashagazeta_ch.png'
 
 export const reviews = [
-    {
-        id: 'winamp',
-        logo: winampLogo,
-        alt: 'Winamp',
-        headline: 'Отличная поддержка Drupal сайтов!',
-        author: 'Команда Winamp',
-    },
     {
         id: 'cableman',
         logo: cablemanLogo,
