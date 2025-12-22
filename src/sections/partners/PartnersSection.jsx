@@ -56,9 +56,9 @@ export function PartnersSection() {
     return (
         <section id="partners" className="partners">
             <div className="container">
-                <h2 className="partners__title">{t('partners.title')}</h2>
+                <h2 className="partners__title">Партнеры</h2>
                 <p className="partners__subtitle">
-                    {renderWithLineBreaks(t('partners.subtitle'))}
+                    {renderWithLineBreaks('Компании, с которыми мы работаем')}
                 </p>
 
                 <div className="partners__viewport">

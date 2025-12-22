@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-const FORMCARRY_URL = 'https://formcarry.com/s/YOUR_FORM_ID'
+const FORMCARRY_URL = 'https://formcarry.com/s/IsePPyesmqB'
 
 const isValidPhone = (value) => /^\+?[0-9\s\-()]{7,}$/.test(value)
 const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)

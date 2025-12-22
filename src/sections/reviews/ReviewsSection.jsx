@@ -50,7 +50,7 @@ export function ReviewsSection() {
                                 <button
                                     type="button"
                                     className="reviews__arrow reviews__arrow--prev"
-                                    aria-label={t('reviews.ariaPrev')}
+                                    aria-label="Предыдущий отзыв"
                                     onClick={prev}
                                 >
                                     <svg
@@ -76,7 +76,7 @@ export function ReviewsSection() {
                                 <button
                                     type="button"
                                     className="reviews__arrow reviews__arrow--next"
-                                    aria-label={t('reviews.ariaNext')}
+                                    aria-label="Следующий отзыв"
                                     onClick={next}
                                 >
                                     <svg

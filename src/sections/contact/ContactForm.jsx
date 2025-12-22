@@ -9,7 +9,7 @@ import {
     submitContactForm,
 } from './contactFormSlice'
 
-export function ContactForm({ submitLabelKey = 'Отправить' }) {
+export function ContactForm() {
     const dispatch = useDispatch()
 
     const values = useSelector((s) => s.contactForm.values)
@@ -103,7 +103,7 @@ export function ContactForm({ submitLabelKey = 'Отправить' }) {
             {errors.consent && <p className="contact__error">{errors.consent}</p>}
 
             <button type="submit" className="contact__submit" disabled={isLoading}>
-                {isLoading ? 'Отправка...' : submitLabelKey}
+                {isLoading ? 'Отправка...' : 'Отправить'}
             </button>
 
             {status === 'success' && <p className="contact__success">Форма отправлена успешно!</p>}

@@ -129,7 +129,7 @@ export function ContactModal() {
                     Оставьте заявку, и мы свяжемся с вами
                 </p>
 
-                <ContactForm submitLabelKey="contact.modal.send" />
+                <ContactForm />
             </div>
         </div>
     )
