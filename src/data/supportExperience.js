@@ -60,7 +60,7 @@ export const supportExperienceCards = [
     },
 ];
 
-export const supportExperienceTitle = 'Наш опыт в поддержке Drupal'
+export const supportExperienceTitle = 'Поддержка от Drupal-coder'
 
 export const expertiseTitle = 'Экспертиза в Drupal, опыт 14 лет!'
 
