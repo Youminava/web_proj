@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => ({
     plugins: [react()],
-    base: mode === 'production' ? '/drupal/' : '/',
+    base: mode === 'production' ? '/web_proj/' : '/',
     build: {
         outDir: 'build',
     },
