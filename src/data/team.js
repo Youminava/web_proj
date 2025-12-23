@@ -80,6 +80,6 @@ export const teamMembersEn = [
     },
 ]
 
-export const teamTitle = 'Наша команда'
+export const teamTitle = 'Команда'
 
 export const teamTitleEn = 'Our team'
