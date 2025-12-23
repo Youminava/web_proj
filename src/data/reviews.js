@@ -65,3 +65,74 @@ export const reviews = [
         author: 'Наша Газета',
     },
 ]
+
+export const reviewsEn = [
+    {
+        id: 'cableman',
+        logo: cablemanLogo,
+        alt: 'CABLEMAN',
+        headline: 'Professional development and optimization.',
+        author: 'CABLEMAN',
+    },
+    {
+        id: 'farbors',
+        logo: farborsLogo,
+        alt: 'Farbors',
+        headline: 'Fast and quality support.',
+        author: 'Farbors',
+    },
+    {
+        id: 'logo0',
+        logo: logo0,
+        alt: 'Corporate client',
+        headline: 'Recommended for Drupal projects.',
+        author: 'Corporate client',
+    },
+    {
+        id: 'logo2',
+        logo: logo2,
+        alt: 'Enterprise partner',
+        headline: 'Reliable partner in development.',
+        author: 'Enterprise partner',
+    },
+    {
+        id: 'estee',
+        logo: esteeLogo,
+        alt: 'Estee',
+        headline: 'High level of expertise.',
+        author: 'Estee',
+    },
+    {
+        id: 'main',
+        logo: mainLogo,
+        alt: 'Drupal Coder client',
+        headline: 'Thank you for excellent work!',
+        author: 'Drupal Coder client',
+    },
+    {
+        id: 'lpcma',
+        logo: lpcmaLogo,
+        alt: 'LPCMA',
+        headline: 'Effective website maintenance.',
+        author: 'LPCMA',
+    },
+    {
+        id: 'nashagazeta',
+        logo: nashagazetaLogo,
+        alt: 'Nasha Gazeta',
+        headline: 'Quality support and development.',
+        author: 'Nasha Gazeta',
+    },
+]
+
+export const reviewsTitle = 'Отзывы'
+
+export const reviewsTitleEn = 'Reviews'
+
+export const reviewsPrevLabel = 'Предыдущий отзыв'
+
+export const reviewsPrevLabelEn = 'Previous review'
+
+export const reviewsNextLabel = 'Следующий отзыв'
+
+export const reviewsNextLabelEn = 'Next review'

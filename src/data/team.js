@@ -40,3 +40,46 @@ export const teamMembers = [
         image: teamMember3,
     },
 ]
+
+export const teamMembersEn = [
+    {
+        id: 1,
+        name: 'Lesha',
+        role: 'support manager, task planning',
+        image: teamMember1,
+    },
+    {
+        id: 2,
+        name: 'Roman',
+        role: 'web projects infrastructure',
+        image: teamMember3,
+    },
+    {
+        id: 3,
+        name: 'Irina',
+        role: 'client relations manager, service organization',
+        image: teamMember2,
+    },
+    {
+        id: 4,
+        name: 'Dasha',
+        role: 'SEO, web marketing',
+        image: teamMember2,
+    },
+    {
+        id: 5,
+        name: 'Sergey',
+        role: 'technical director, 14 years of Drupal experience',
+        image: teamMember1,
+    },
+    {
+        id: 6,
+        name: 'Vadim',
+        role: 'UX/UI design',
+        image: teamMember3,
+    },
+]
+
+export const teamTitle = 'Наша команда'
+
+export const teamTitleEn = 'Our team'

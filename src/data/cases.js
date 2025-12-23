@@ -60,3 +60,63 @@ export const cases = [
         image: caseImg4,
     },
 ]
+
+export const casesEn = [
+    {
+        id: 1,
+        variant: 'description',
+        title: 'Setting up YML export for Yandex.Market',
+        date: '22.04.2019',
+        description: 'These words are completely fair, however the hypnotic riff continues the pause layer.',
+        image: caseImg1,
+    },
+    {
+        id: 2,
+        variant: 'wide',
+        title: 'Setting up YML export for Yandex.Market',
+        image: caseImg5,
+    },
+    {
+        id: 3,
+        variant: 'vertical',
+        title: 'Setting up YML export for Yandex.Market',
+        date: '22.04.2019',
+        image: caseImg3,
+    },
+    {
+        id: 4,
+        variant: 'vertical',
+        title: 'Setting up YML export for Yandex.Market',
+        date: '22.04.2019',
+        image: caseImg2,
+    },
+    {
+        id: 5,
+        variant: 'description',
+        title: 'Setting up YML export for Yandex.Market',
+        date: '22.04.2019',
+        description: 'These words are completely fair, however the hypnotic riff continues the pause layer.',
+        image: caseImg4,
+    },
+    {
+        id: 6,
+        variant: 'wide',
+        title: 'Setting up YML export for Yandex.Market',
+        image: caseImg6,
+    },
+    {
+        id: 7,
+        variant: 'vertical',
+        title: 'Setting up YML export for Yandex.Market',
+        date: '22.04.2019',
+        image: caseImg4,
+    },
+]
+
+export const casesTitle = 'Последние кейсы'
+
+export const casesTitleEn = 'Latest cases'
+
+export const casesShowMore = 'Показать больше'
+
+export const casesShowMoreEn = 'Show more'

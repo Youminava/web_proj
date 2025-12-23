@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Home } from '../pages/Home'
 import { MobileMenu } from '../components/layout/MobileMenu'
 import { ContactModal } from '../sections/contact/ContactModal'
+import { LanguageProvider } from '../contexts/LanguageContext'
 import {
     closeMobileMenu,
     openMobileMenu,
@@ -47,14 +48,14 @@ function HomeLayout() {
     )
 
     return (
-        <>
+        <LanguageProvider>
             <Home onBurgerClick={handleBurgerClick} onContactClick={handleContactClick} />
             <MobileMenu
                 isOpen={isMenuOpen}
                 onClose={handleMenuClose}
                 onContactClick={handleContactClick}
             />
-        </>
+        </LanguageProvider>
     )
 }
 

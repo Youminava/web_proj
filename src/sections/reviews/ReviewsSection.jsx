@@ -1,12 +1,21 @@
 import React, { useMemo, useState } from 'react'
 import reviewBgShape from '../../assets/img/review-quote-bg.svg'
-import { reviews } from '../../data/reviews'
+import { reviews, reviewsEn, reviewsTitle, reviewsTitleEn, reviewsPrevLabel, reviewsPrevLabelEn, reviewsNextLabel, reviewsNextLabelEn } from '../../data/reviews'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function ReviewsSection() {
+    const { language } = useLanguage()
+    const isEnglish = language === 'en'
+    
+    const reviewsData = isEnglish ? reviewsEn : reviews
+    const title = isEnglish ? reviewsTitleEn : reviewsTitle
+    const prevLabel = isEnglish ? reviewsPrevLabelEn : reviewsPrevLabel
+    const nextLabel = isEnglish ? reviewsNextLabelEn : reviewsNextLabel
+    
     const [current, setCurrent] = useState(0)
-    const total = reviews.length
+    const total = reviewsData.length
 
-    const review = useMemo(() => reviews[current], [current])
+    const review = useMemo(() => reviewsData[current], [current, reviewsData])
 
     const next = () => setCurrent((prev) => (prev + 1) % total)
     const prev = () => setCurrent((prev) => (prev - 1 + total) % total)
@@ -16,7 +25,7 @@ export function ReviewsSection() {
     return (
         <section id="reviews" className="reviews">
             <div className="container">
-                <h2 className="reviews__title">Отзывы</h2>
+                <h2 className="reviews__title">{title}</h2>
 
                 <div className="reviews__wrap">
                     <div className="reviews__bg-shape" aria-hidden="true">
@@ -50,7 +59,7 @@ export function ReviewsSection() {
                                 <button
                                     type="button"
                                     className="reviews__arrow reviews__arrow--prev"
-                                    aria-label="Предыдущий отзыв"
+                                    aria-label={prevLabel}
                                     onClick={prev}
                                 >
                                     <svg
@@ -76,7 +85,7 @@ export function ReviewsSection() {
                                 <button
                                     type="button"
                                     className="reviews__arrow reviews__arrow--next"
-                                    aria-label="Следующий отзыв"
+                                    aria-label={nextLabel}
                                     onClick={next}
                                 >
                                     <svg

@@ -8,11 +8,28 @@ import {
     contactEmailHref,
     contactPhone,
     contactPhoneHref,
+    contactTitle,
+    contactTitleEn,
+    contactText,
+    contactTextEn,
+    contactFootnote1,
+    contactFootnote1En,
+    contactFootnote2,
+    contactFootnote2En,
 } from '../../data/contact'
 import { ContactForm } from './ContactForm'
 import { renderWithLineBreaks } from '../../utils/text'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function ContactSection() {
+    const { language } = useLanguage()
+    const isEnglish = language === 'en'
+    
+    const title = isEnglish ? contactTitleEn : contactTitle
+    const text = isEnglish ? contactTextEn : contactText
+    const footnote1 = isEnglish ? contactFootnote1En : contactFootnote1
+    const footnote2 = isEnglish ? contactFootnote2En : contactFootnote2
+    
     return (
         <section id="contacts" className="contact">
             <div className="contact__bg contact__bg--top">
@@ -24,8 +41,8 @@ export function ContactSection() {
 
             <div className="container contact__inner">
                 <div className="contact__info">
-                    <h2 className="contact__title">Оставить заявку на поддержку сайта</h2>
-                    <p className="contact__text">{renderWithLineBreaks('Срочно нужна поддержка сайта? Ваша команда не успевает справиться\nсамостоятельно или предыдущий подрядчик не справился с работой?\nТогда вам точно к нам! Просто оставьте заявку и наш менеджер с вами свяжется!')}</p>
+                    <h2 className="contact__title">{title}</h2>
+                    <p className="contact__text">{renderWithLineBreaks(text)}</p>
 
                     <div className="contact__links">
                         <div className="contact__link contact__link--phone">
@@ -42,8 +59,8 @@ export function ContactSection() {
             </div>
 
             <div className="contact__footnote container">
-                <p>Проект ООО «Инитлаб», Краснодар, Россия.</p>
-                <p>Drupal является зарегистрированной торговой маркой Dries Buytaert.</p>
+                <p>{footnote1}</p>
+                <p>{footnote2}</p>
             </div>
         </section>
     )

@@ -1,14 +1,22 @@
 import React from 'react'
-import { cases } from '../../data/cases'
+import { cases, casesEn, casesTitle, casesTitleEn, casesShowMore, casesShowMoreEn } from '../../data/cases'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function CasesSection() {
+    const { language } = useLanguage()
+    const isEnglish = language === 'en'
+    
+    const casesData = isEnglish ? casesEn : cases
+    const title = isEnglish ? casesTitleEn : casesTitle
+    const showMoreText = isEnglish ? casesShowMoreEn : casesShowMore
+    
     return (
         <section id="cases" className="cases">
             <div className="container">
-                <h2 className="cases__title">Последние кейсы</h2>
+                <h2 className="cases__title">{title}</h2>
 
                 <div className="cases__grid">
-                    {cases.map((caseItem) => {
+                    {casesData.map((caseItem) => {
                         if (caseItem.variant === 'wide') {
                             return (
                                 <article
@@ -71,7 +79,7 @@ export function CasesSection() {
 
                 <div className="cases__footer">
                     <button className="cases__show-more" type="button">
-                        Показать больше
+                        {showMoreText}
                     </button>
                 </div>
             </div>

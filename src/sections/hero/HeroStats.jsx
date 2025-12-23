@@ -1,11 +1,15 @@
 import React from 'react'
-import { heroStats } from '../../data/hero'
+import { heroStats, heroStatsEn } from '../../data/hero'
 import cupImg from '/src/assets/img/cup.png'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function HeroStats() {
+    const { language } = useLanguage()
+    const currentStats = language === 'ru' ? heroStats : heroStatsEn
+
     return (
         <div className="hero-stats">
-            {heroStats.map((item, index) => {
+            {currentStats.map((item, index) => {
                 const isFirst = index === 0
                 return (
                     <div

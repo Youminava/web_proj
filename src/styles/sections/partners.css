@@ -36,6 +36,10 @@
     margin: 0 auto 42px;
 }
 
+.partners__subtitle--bold {
+    font-weight: 700;
+}
+
 
 .partners__viewport {
     overflow: hidden;

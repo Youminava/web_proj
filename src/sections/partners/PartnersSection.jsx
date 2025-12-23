@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from 'react'
-import { partners } from '../../data/partners'
+import { partners, partnersTitle, partnersTitleEn, partnersSubtitle, partnersSubtitleEn } from '../../data/partners'
 import { renderWithLineBreaks } from '../../utils/text'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function PartnersSection() {
+    const { language } = useLanguage()
+    const isEnglish = language === 'en'
+    
+    const title = isEnglish ? partnersTitleEn : partnersTitle
+    const subtitle = isEnglish ? partnersSubtitleEn : partnersSubtitle
     // удваиваем список, чтобы анимация была бесшовной
     const marqueePartners = [...partners, ...partners]
     const row1Ref = useRef(null)
@@ -56,9 +62,9 @@ export function PartnersSection() {
     return (
         <section id="partners" className="partners">
             <div className="container">
-                <h2 className="partners__title">Партнеры</h2>
+                <h2 className="partners__title">{title}</h2>
                 <p className="partners__subtitle">
-                    {renderWithLineBreaks('Компании, с которыми мы работаем')}
+                    {renderWithLineBreaks(subtitle)}
                 </p>
 
                 <div className="partners__viewport">

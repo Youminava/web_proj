@@ -69,6 +69,66 @@
 .header__phone {
     font-size: 18px;
     margin-top: 37px;
+    white-space: nowrap;
+}
+
+.header__lang-simple {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 37px;
+}
+
+.header__lang-current {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header__lang-toggle-arrow {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-surface);
+    transition: opacity 0.2s ease;
+}
+
+.header__lang-toggle-arrow:hover {
+    opacity: 0.8;
+}
+
+.header__lang-arrow {
+    transition: transform 0.2s ease;
+}
+
+.header__lang-arrow--open {
+    transform: rotate(180deg);
+}
+
+.header__lang-option {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    color: var(--color-surface);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    text-align: left;
+}
+
+.header__lang-option:hover {
+    opacity: 0.8;
+}
+
+.header__lang-option--active {
+    opacity: 1;
 }
 
 .header__lang {
@@ -189,7 +249,8 @@
 
 @media (max-width: 1023.98px) {
     .header__phone,
-    .header__lang {
+    .header__lang,
+    .header__lang-toggle {
         display: none;
     }
 

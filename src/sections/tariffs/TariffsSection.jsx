@@ -1,7 +1,16 @@
 import React from 'react'
-import { tariffs } from '../../data/tariffs'
+import { tariffs, tariffsEn, tariffsTitle, tariffsTitleEn, tariffsFooterText, tariffsFooterTextEn, tariffsFooterLink, tariffsFooterLinkEn } from '../../data/tariffs'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function TariffsSection() {
+    const { language } = useLanguage()
+    const isEnglish = language === 'en'
+    
+    const tariffsData = isEnglish ? tariffsEn : tariffs
+    const title = isEnglish ? tariffsTitleEn : tariffsTitle
+    const footerText = isEnglish ? tariffsFooterTextEn : tariffsFooterText
+    const footerLink = isEnglish ? tariffsFooterLinkEn : tariffsFooterLink
+    
     const goToContacts = () => {
         const el = document.getElementById('contacts')
         if (el) {
@@ -14,10 +23,10 @@ export function TariffsSection() {
     return (
         <section id="tariffs" className="section tariffs">
             <div className="container">
-                <h2 className="tariffs__title">Тарифы</h2>
+                <h2 className="tariffs__title">{title}</h2>
 
                 <div className="tariffs__cards">
-                    {tariffs.map((tariff, idx) => (
+                    {tariffsData.map((tariff, idx) => (
                         <article
                             key={idx}
                             className={
@@ -62,11 +71,11 @@ export function TariffsSection() {
                 <div className="tariffs__footer">
                     <p className="tariffs__footer-text">
                         <span className="tariffs__footer-line tariffs__footer-line--first">
-                            Вам не подходят наши тарифы? Оставьте заявку и мы предложим вам индивидуальные условия!
+                            {footerText}
                         </span>
                     </p>
                     <button className="tariffs__footer-link" onClick={goToContacts}>
-                        получить индивидуальный тариф
+                        {footerLink}
                     </button>
                 </div>
             </div>

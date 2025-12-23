@@ -60,13 +60,73 @@ export const supportExperienceCards = [
     },
 ];
 
+export const supportExperienceItemsEn = [
+    {
+        num: '01.',
+        title: 'Free\nconsultation',
+        text: 'We will analyze your\nproject and offer\nthe best solution\nfor your business.',
+        bg: cardBg1,
+    },
+    {
+        num: '02.',
+        title: 'Project\naudit',
+        text: 'We will check your\nsite for errors,\nsecurity issues\nand performance.',
+        bg: cardBg2,
+    },
+    {
+        num: '03.',
+        title: 'Technical\nsupport',
+        text: '24/7 technical\nsupport for your\nDrupal site.',
+        bg: cardBg3,
+    },
+    {
+        num: '04.',
+        title: 'Personal\nproject manager',
+        text: 'Your project manager\nis always aware of\nthe current project\nstatus and ready\nto answer any\nquestions.',
+        bg: cardBg4,
+    },
+    {
+        num: '05.',
+        title: 'Convenient\npayment methods',
+        text: 'Cashless payment\nunder contract or\nelectronic money:\nWebMoney, Yandex.Money,\nPaypal.',
+        bg: cardBg5,
+    },
+    {
+        num: '06.',
+        title: 'Work with SLA\nand NDA',
+        text: 'Work within\nconfidentiality\nagreements\nand service level\nagreements.',
+        bg: cardBg6,
+    },
+    {
+        num: '07.',
+        title: 'In-house\nspecialists',
+        text: 'Reliable in-house\nspecialists, no\nfreelancers.',
+        bg: cardBg7,
+    },
+    {
+        num: '08.',
+        title: 'Convenient\ncommunication\nchannels',
+        text: 'Consultations by\nphone, Skype,\nin messengers.',
+        bg: cardBg8,
+    },
+];
+
 export const supportExperienceTitle = 'Поддержка от Drupal-coder'
 
+export const supportExperienceTitleEn = 'Support from Drupal-coder'
+
 export const expertiseTitle = 'Экспертиза в Drupal, опыт 14 лет!'
+
+export const expertiseTitleEn = 'Expertise in Drupal, 14 years of experience!'
 
 export const expertisePoints = [
     'Только системный подход - контроль версий, резервирование и тестирование!',
     'Только Drupal сайты, не берём на поддержку сайты на других SMS!',
+]
+
+export const expertisePointsEn = [
+    'Only systematic approach - version control, backup and testing!',
+    'Only Drupal sites, we do not take other CMS sites for support!',
 ]
 
 export const analyticsImageRu = analyticsImgRu

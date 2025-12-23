@@ -1,14 +1,21 @@
 import React from 'react'
-import { teamMembers } from '../../data/team'
+import { teamMembers, teamMembersEn, teamTitle, teamTitleEn } from '../../data/team'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function TeamSection() {
+    const { language } = useLanguage()
+    const isEnglish = language === 'en'
+    
+    const members = isEnglish ? teamMembersEn : teamMembers
+    const title = isEnglish ? teamTitleEn : teamTitle
+    
     return (
         <section id="team" className="team">
             <div className="container">
-                <h2 className="team__title">Наша команда</h2>
+                <h2 className="team__title">{title}</h2>
 
                 <div className="team__grid">
-                    {teamMembers.map((member) => (
+                    {members.map((member) => (
                         <article key={member.id} className="team-member">
                             <div className="team-member__image-wrapper">
                                 <img

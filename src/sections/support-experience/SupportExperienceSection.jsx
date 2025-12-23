@@ -3,15 +3,30 @@ import React from 'react'
 import druplicon from '/src/assets/img/druplicon.svg'
 import {
     analyticsImageRu,
+    analyticsImageEn,
     expertisePoints,
+    expertisePointsEn,
     expertiseTitle,
+    expertiseTitleEn,
     supportExperienceCards,
+    supportExperienceItemsEn,
     supportExperienceTitle,
+    supportExperienceTitleEn,
 } from '../../data/supportExperience'
 import { renderWithLineBreaks } from '../../utils/text'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function SupportExperienceSection() {
-    const analyticsImage = analyticsImageRu
+    const { language } = useLanguage()
+    
+    const isEnglish = language === 'en'
+    
+    const cards = isEnglish ? supportExperienceItemsEn : supportExperienceCards
+    const title = isEnglish ? supportExperienceTitleEn : supportExperienceTitle
+    const expertiseTitleText = isEnglish ? expertiseTitleEn : expertiseTitle
+    const expertisePointsText = isEnglish ? expertisePointsEn : expertisePoints
+    const analyticsImage = isEnglish ? analyticsImageEn : analyticsImageRu
+    
     return (
         <section className="section support-exp" id="support-exp">
             <div className="container">
@@ -20,11 +35,11 @@ export function SupportExperienceSection() {
                 
                 <div className="support-exp__top">
                     <h2 className="support-exp__title">
-                        {renderWithLineBreaks(supportExperienceTitle)}
+                        {renderWithLineBreaks(title)}
                     </h2>
 
                     <div className="support-exp__grid">
-                        {supportExperienceCards.map((card, i) => (
+                        {cards.map((card, i) => (
                             <article key={i} className="support-exp__card">
                                 <img src={card.bg} alt="" className="support-exp__card-bg" />
                                 <div className="support-exp__num">{card.num}</div>
@@ -43,11 +58,11 @@ export function SupportExperienceSection() {
 
                     <div className="support-exp__info">
                         <h2 className="support-exp__info-title">
-                            {renderWithLineBreaks(expertiseTitle)}
+                            {renderWithLineBreaks(expertiseTitleText)}
                         </h2>
 
                         <div className="support-exp__info-grid">
-                            {expertisePoints.map((point, index) => (
+                            {expertisePointsText.map((point, index) => (
                                 <div className="support-exp__info-item" key={index}>
                                     <div className="support-exp__info-line" />
                                     <p className="support-exp__info-text">

@@ -51,5 +51,51 @@ export const supportItems = [
     },
 ]
 
+export const supportItemsEn = [
+    {
+        icon: competency1,
+        bg: iconBg,
+        text: 'Adding information\nto the website,\ncreating new sections',
+    },
+    {
+        icon: competency2,
+        bg: iconBg,
+        text: 'Development and\noptimization of\nwebsite modules',
+    },
+    {
+        icon: competency3,
+        bg: iconBg,
+        text: 'Integration with CRM,\n1C, payment systems,\nany web services',
+    },
+    {
+        icon: competency4,
+        bg: iconBg,
+        text: 'Any modifications\nto functionality\nand design',
+    },
+    {
+        icon: competency5,
+        bg: iconBg,
+        text: 'Audit and monitoring\nof Drupal website\nsecurity',
+    },
+    {
+        icon: competency6,
+        bg: iconBg,
+        text: 'Migration, content\nimport and Drupal\nupgrade',
+    },
+    {
+        icon: competency7,
+        bg: iconBg,
+        text: 'Optimization and\nspeeding up\nDrupal websites',
+    },
+    {
+        icon: competency8,
+        bg: iconBg,
+        text: 'Web marketing,\nconsultations\nand SEO work',
+    },
+]
+
 export const supportTitle = '13 лет совершенствуем\nкомпетенции в Drupal\n поддержке!'
 export const supportSubtitle = 'Разрабатываем и оптимизируем модули, расширяем функциональность сайтов, обновляем дизайн'
+
+export const supportTitleEn = '13 years perfecting\ncompetencies in Drupal\nsupport!'
+export const supportSubtitleEn = 'We develop and optimize modules, expand website functionality, update design'

@@ -1,8 +1,19 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
+import {
+    modalAriaLabel,
+    modalAriaLabelEn,
+    modalCloseAriaLabel,
+    modalCloseAriaLabelEn,
+    modalTitle,
+    modalTitleEn,
+    modalSubtitle,
+    modalSubtitleEn,
+} from '../../data/contact'
 import { ContactForm } from './ContactForm'
 import { rafAnimate } from './rafAnimate'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 const DURATION_MS = 280
 
@@ -11,6 +22,14 @@ function easeOutCubic(t) {
 }
 
 export function ContactModal() {
+    const { language } = useLanguage()
+    const isEnglish = language === 'en'
+    
+    const ariaLabel = isEnglish ? modalAriaLabelEn : modalAriaLabel
+    const closeAriaLabel = isEnglish ? modalCloseAriaLabelEn : modalCloseAriaLabel
+    const title = isEnglish ? modalTitleEn : modalTitle
+    const subtitle = isEnglish ? modalSubtitleEn : modalSubtitle
+    
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -107,7 +126,7 @@ export function ContactModal() {
     const backdropStyle = { opacity: Math.min(1, progress) }
 
     return (
-        <div className="contact-modal" role="dialog" aria-modal="true" aria-label="Контактная форма">
+        <div className="contact-modal" role="dialog" aria-modal="true" aria-label={ariaLabel}>
             <div
                 className="contact-modal__backdrop"
                 style={backdropStyle}
@@ -119,14 +138,14 @@ export function ContactModal() {
                     type="button"
                     className="contact-modal__close"
                     onClick={close}
-                    aria-label="Закрыть"
+                    aria-label={closeAriaLabel}
                 >
                     ✕
                 </button>
 
-                <h2 className="contact-modal__title">Связаться с нами</h2>
+                <h2 className="contact-modal__title">{title}</h2>
                 <p className="contact-modal__subtitle">
-                    Оставьте заявку, и мы свяжемся с вами
+                    {subtitle}
                 </p>
 
                 <ContactForm />

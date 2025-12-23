@@ -2,9 +2,14 @@ import React from 'react'
 import heroVideo from '/src/assets/video/video.mp4'
 import druplicon from '/src/assets/img/druplicon.svg'
 import { HeroStats } from './HeroStats'
-import { heroActions, heroCopy } from '../../data/hero'
+import { heroActions, heroCopy, heroActionsEn, heroCopyEn } from '../../data/hero'
 import { renderWithLineBreaks } from '../../utils/text'
+import { useLanguage } from '../../contexts/LanguageContext'
 export function Hero() {
+    const { language } = useLanguage()
+    const currentCopy = language === 'ru' ? heroCopy : heroCopyEn
+    const currentActions = language === 'ru' ? heroActions : heroActionsEn
+
     return (
 
         <section className="hero" id="hero">
@@ -24,14 +29,14 @@ export function Hero() {
                 <div className="container hero__content">
                 <div className="hero__text" id="hero-text">
                     <h1 className="hero__title" id="hero-title">
-                        {renderWithLineBreaks(heroCopy.title)}
+                        {renderWithLineBreaks(currentCopy.title)}
                     </h1>
                     <p className="hero__subtitle" id="hero-subtitle">
-                        {renderWithLineBreaks(heroCopy.subtitle)}
+                        {renderWithLineBreaks(currentCopy.subtitle)}
                     </p>
 
                     <div className="hero__actions" id="hero-actions">
-                        {heroActions.map((action) => (
+                        {currentActions.map((action) => (
                             <a
                                 key={action.id}
                                 href={action.href || '#'}

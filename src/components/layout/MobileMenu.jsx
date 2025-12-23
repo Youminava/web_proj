@@ -1,8 +1,11 @@
 import React from 'react'
-import { mobileNavItems } from '../../data/navigation'
+import { mobileNavItems, mobileNavItemsEn } from '../../data/navigation'
 import logo from '../../assets/img/logo.png'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export function MobileMenu({ isOpen, onClose, onContactClick }) {
+    const { language } = useLanguage()
+    const currentNavItems = language === 'ru' ? mobileNavItems : mobileNavItemsEn
     return (
         <div className={`mobile-menu ${isOpen ? 'mobile-menu--open' : ''}`}>
             <div className="mobile-menu__backdrop" onClick={onClose} />
@@ -21,7 +24,7 @@ export function MobileMenu({ isOpen, onClose, onContactClick }) {
                 </div>
 
                 <nav className="mobile-menu__nav">
-                    {mobileNavItems.map((item) => (
+                    {currentNavItems.map((item) => (
                         <a
                             key={item.href}
                             href={item.href}
