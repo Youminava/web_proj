@@ -239,6 +239,10 @@
         justify-content: space-between;
         gap: 16px;
     }
+
+    .header__lang-simple {
+        margin-top: 0;
+    }
 }
 .header__link:hover {
     opacity: 0.6;
@@ -259,6 +263,7 @@
 
     .header__right {
         gap: 12px;
+        align-items: flex-start;
     }
 
     .header__burger {
@@ -269,7 +274,7 @@
         border-radius: var(--radius-sm);
         background: var(--color-accent);
         border: 1px solid rgba(0, 0, 0, 0.12);
-        margin-top: 6px;
+        margin-top: 0;
     }
 
     .header__burger span {
