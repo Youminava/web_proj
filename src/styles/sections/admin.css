@@ -1,0 +1,226 @@
+.admin {
+    min-height: 100vh;
+    padding: 48px 0 120px;
+    background: var(--color-bg);
+    color: var(--color-surface);
+}
+
+.admin__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.admin__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.admin__back {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+}
+
+.admin__back:hover {
+    color: #fff;
+}
+
+.admin__title {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.admin__login {
+    width: 100%;
+    max-width: 420px;
+    align-self: center;
+    margin-top: 6vh;
+}
+
+.admin__login .contact__auth-title {
+    text-align: center;
+}
+
+.admin__count {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.admin__empty {
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.admin__logout {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.admin__logout:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.admin__table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.admin__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.admin__table th,
+.admin__table td {
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin__table th {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.admin__table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.admin__table tr.is-editing {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.admin__table input {
+    width: 100%;
+    min-width: 120px;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    font: inherit;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+}
+
+.admin__table input.has-error {
+    border-color: #ff6b6b;
+}
+
+.admin__actions {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.admin__btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.admin__btn:hover:not(:disabled) {
+    color: #fff;
+    border-color: #fff;
+}
+
+.admin__btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.admin__btn--save {
+    color: #1b1b1b;
+    background: #fff;
+    border-color: #fff;
+}
+
+.admin__btn--save:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.admin__btn--danger {
+    color: #ff8585;
+    border-color: rgba(255, 107, 107, 0.5);
+}
+
+.admin__btn--danger:hover:not(:disabled) {
+    color: #fff;
+    background: #e03131;
+    border-color: #e03131;
+}
+
+@media (max-width: 720px) {
+    .admin__table,
+    .admin__table thead,
+    .admin__table tbody,
+    .admin__table th,
+    .admin__table td,
+    .admin__table tr {
+        display: block;
+    }
+
+    .admin__table thead {
+        display: none;
+    }
+
+    .admin__table tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 8px 0;
+    }
+
+    .admin__table td {
+        border: none;
+        padding: 6px 14px;
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .admin__table td::before {
+        content: attr(data-label);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.5);
+        flex: 0 0 90px;
+    }
+
+    .admin__actions {
+        justify-content: flex-end;
+    }
+}

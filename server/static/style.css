@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    background: #050816;
+    color: #f9fafb;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.page {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+b {
+    color: #fff;
+}
+
+a {
+    color: #ff6a3a;
+    text-decoration: underline;
+}
+
+.errors {
+    margin: 8px 0 24px;
+    padding-left: 20px;
+    color: #f14d34;
+    font-size: 14px;
+}

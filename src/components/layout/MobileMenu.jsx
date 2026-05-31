@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { mobileNavItems, mobileNavItemsEn } from '../../data/navigation'
+import { headerLoginButton, headerLoginButtonEn } from '../../data/contact'
 import logo from '../../assets/img/logo.png'
 import { useLanguage } from '../../contexts/LanguageContext'
 
@@ -34,6 +36,13 @@ export function MobileMenu({ isOpen, onClose, onContactClick }) {
                             {item.label}
                         </a>
                     ))}
+                    <Link
+                        to="/login"
+                        className="mobile-menu__link"
+                        onClick={onClose}
+                    >
+                        {language === 'ru' ? headerLoginButton : headerLoginButtonEn}
+                    </Link>
                 </nav>
 
                 <div className="mobile-menu__footer">

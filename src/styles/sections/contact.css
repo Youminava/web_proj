@@ -439,8 +439,73 @@
     color: rgba(255, 255, 255, 0.9);
 }
 
+.contact__result {
+    max-width: 456px;
+    margin: 10px 0 0;
+}
+
+.contact__credential {
+    margin: 6px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact__credential b {
+    color: #ffffff;
+}
+
+.contact__result a {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #f14d34;
+}
+
 .contact__submit:disabled {
     opacity: 0.65;
     cursor: not-allowed;
     transform: none;
+}
+
+.contact__forms {
+    display: grid;
+    gap: 32px;
+}
+
+.contact__auth {
+    margin-top: 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact__auth-title {
+    margin: 0 0 4px;
+    max-width: 456px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact__logout {
+    justify-self: start;
+    margin-top: 4px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+}
+
+.contact__logout:hover {
+    color: #fff;
 }

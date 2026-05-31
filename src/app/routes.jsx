@@ -2,6 +2,8 @@ import React, { useCallback } from 'react'
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Home } from '../pages/Home'
+import { Profile } from '../pages/Profile'
+import { Admin } from '../pages/Admin'
 import { MobileMenu } from '../components/layout/MobileMenu'
 import { ContactModal } from '../sections/contact/ContactModal'
 import { LanguageProvider } from '../contexts/LanguageContext'
@@ -48,14 +50,14 @@ function HomeLayout() {
     )
 
     return (
-        <LanguageProvider>
+        <>
             <Home onBurgerClick={handleBurgerClick} onContactClick={handleContactClick} />
             <MobileMenu
                 isOpen={isMenuOpen}
                 onClose={handleMenuClose}
                 onContactClick={handleContactClick}
             />
-        </LanguageProvider>
+        </>
     )
 }
 
@@ -65,15 +67,18 @@ export function AppRoutes() {
     const backgroundLocation = state?.backgroundLocation
 
     return (
-        <>
+        <LanguageProvider>
             <Routes location={backgroundLocation || location}>
                 <Route path="/" element={<HomeLayout />} />
                 <Route path="/contact" element={<HomeLayout />} />
+                <Route path="/profile/:id" element={<Profile />} />
+                <Route path="/login" element={<Profile />} />
+                <Route path="/admin" element={<Admin />} />
             </Routes>
 
             <Routes>
                 <Route path="/contact" element={<ContactModal />} />
             </Routes>
-        </>
+        </LanguageProvider>
     )
 }

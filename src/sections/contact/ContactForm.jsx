@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import checkIcon from '../../assets/img/check.svg'
 import {
     consentText,
@@ -19,7 +20,14 @@ import {
     formSuccessMessageEn,
     formErrorMessage,
     formErrorMessageEn,
+    formLoginLabel,
+    formLoginLabelEn,
+    formPasswordLabel,
+    formPasswordLabelEn,
+    formProfileLink,
+    formProfileLinkEn,
 } from '../../data/contact'
+import { API_USERS_URL } from '../../config'
 import {
     clearSubmitState,
     setConsent,
@@ -35,18 +43,22 @@ export function ContactForm() {
     const consent = isEnglish ? consentTextEn : consentText
     const namePlaceholder = isEnglish ? formNamePlaceholderEn : formNamePlaceholder
     const phonePlaceholder = isEnglish ? formPhonePlaceholderEn : formPhonePlaceholder
-    const emailPlaceholder = formEmailPlaceholder // Email is the same
+    const emailPlaceholder = formEmailPlaceholder
     const commentPlaceholder = isEnglish ? formCommentPlaceholderEn : formCommentPlaceholder
     const submitButton = isEnglish ? formSubmitButtonEn : formSubmitButton
     const submittingButton = isEnglish ? formSubmittingButtonEn : formSubmittingButton
     const successMessage = isEnglish ? formSuccessMessageEn : formSuccessMessage
     const errorMessage = isEnglish ? formErrorMessageEn : formErrorMessage
-    
+    const loginLabel = isEnglish ? formLoginLabelEn : formLoginLabel
+    const passwordLabel = isEnglish ? formPasswordLabelEn : formPasswordLabel
+    const profileLinkText = isEnglish ? formProfileLinkEn : formProfileLink
+
     const dispatch = useDispatch()
 
     const values = useSelector((s) => s.contactForm.values)
     const errors = useSelector((s) => s.contactForm.errors)
     const status = useSelector((s) => s.contactForm.status)
+    const result = useSelector((s) => s.contactForm.result)
     const submitErrorMessageKey = useSelector((s) => s.contactForm.submitErrorMessageKey)
 
     const isLoading = status === 'loading'
@@ -76,7 +88,13 @@ export function ContactForm() {
     )
 
     return (
-        <form className="contact__form" onSubmit={handleSubmit} noValidate>
+        <form
+            className="contact__form"
+            onSubmit={handleSubmit}
+            action={API_USERS_URL}
+            method="post"
+            noValidate
+        >
             <label className={`contact__field ${errors.name ? 'contact__field--error' : ''}`}>
                 <input
                     type="text"
@@ -138,7 +156,20 @@ export function ContactForm() {
                 {isLoading ? submittingButton : submitButton}
             </button>
 
-            {status === 'success' && <p className="contact__success">{successMessage}</p>}
+            {status === 'success' && result && (
+                <div className="contact__result">
+                    <p className="contact__success">{successMessage}</p>
+                    <p className="contact__credential">
+                        {loginLabel}: <b>{result.login}</b>
+                    </p>
+                    <p className="contact__credential">
+                        {passwordLabel}: <b>{result.password}</b>
+                    </p>
+                    <p>
+                        <Link to={result.profileUrl}>{profileLinkText}</Link>
+                    </p>
+                </div>
+            )}
             {status === 'error' && (
                 <p className="contact__error">{submitErrorMessageKey || errorMessage}</p>
             )}

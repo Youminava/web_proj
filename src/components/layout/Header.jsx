@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/img/drupal-coder.svg'
 import { mainNavItems, mainNavItemsEn } from '../../data/navigation'
+import { headerLoginButton, headerLoginButtonEn } from '../../data/contact'
 import { useLanguage } from '../../contexts/LanguageContext'
 
 export function Header({
@@ -67,7 +69,11 @@ export function Header({
                     <a href="tel:88002222673" className="header__phone">
                         8 800 222-26-73
                     </a>
-                    
+
+                    <Link to="/login" className="header__login">
+                        {language === 'ru' ? headerLoginButton : headerLoginButtonEn}
+                    </Link>
+
                     <div className="header__lang-simple">
                         <div className="header__lang-current">
                             <button

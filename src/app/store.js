@@ -4,6 +4,8 @@ import {
     contactFormInitialState,
     contactFormReducer,
 } from '../sections/contact/contactFormSlice'
+import { authEditReducer } from '../sections/contact/authEditSlice'
+import { adminReducer } from '../sections/admin/adminSlice'
 
 const CONTACT_FORM_STORAGE_KEY = 'contactForm.v1'
 
@@ -23,7 +25,7 @@ function saveContactFormValues(values) {
     try {
         localStorage.setItem(CONTACT_FORM_STORAGE_KEY, JSON.stringify(values))
     } catch {
-        // ignore storage errors
+        return
     }
 }
 
@@ -36,6 +38,8 @@ export const store = configureStore({
     reducer: {
         ui: uiReducer,
         contactForm: contactFormReducer,
+        authEdit: authEditReducer,
+        admin: adminReducer,
     },
     preloadedState: preloadedContactFormState
         ? { contactForm: preloadedContactFormState }

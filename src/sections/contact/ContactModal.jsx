@@ -90,8 +90,8 @@ export function ContactModal() {
                 document.title,
                 window.location.href,
             )
-        } catch {
-            // ignore History API errors
+        } catch (err) {
+            void err
         }
         return () => {
             stopRaf()

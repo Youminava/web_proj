@@ -19,6 +19,8 @@ import './styles/sections/reviews.css'
 import './styles/sections/partners.css'
 import './styles/sections/contact.css'
 import './styles/sections/contact-modal.css'
+import './styles/sections/profile.css'
+import './styles/sections/admin.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

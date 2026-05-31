@@ -9,7 +9,6 @@ export function PartnersSection() {
     
     const title = isEnglish ? partnersTitleEn : partnersTitle
     const subtitle = isEnglish ? partnersSubtitleEn : partnersSubtitle
-    // удваиваем список, чтобы анимация была бесшовной
     const marqueePartners = [...partners, ...partners]
     const row1Ref = useRef(null)
     const row2Ref = useRef(null)
@@ -22,7 +21,6 @@ export function PartnersSection() {
         const getCycle = () => {
             const el = row1Ref.current
             if (!el) return 1
-            // одна половина — потому что список удвоен
             return Math.max(el.scrollWidth / 2, 1)
         }
 
@@ -34,7 +32,7 @@ export function PartnersSection() {
 
         const step = () => {
             const cycle = getCycle()
-            const shift = 0.4 // скорость в пикселях за кадр
+            const shift = 0.4
 
             offset1 -= shift
             offset2 -= shift
@@ -52,7 +50,6 @@ export function PartnersSection() {
             rafId = requestAnimationFrame(step)
         }
 
-        // начальный сдвиг нижней строки на полкарточки
         offset2 = -getHalfCard()
         rafId = requestAnimationFrame(step)
 
