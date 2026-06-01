@@ -17,7 +17,7 @@ def auth_user(request):
     if not creds:
         return None
     row = get_user(int(request.params[0]))
-    if row and row["login"] == creds[0] and row["password"] == creds[1]:
+    if row and row["login"] == creds[0] and verify_password(creds[1], row["password"]):
         return row
     return None
 
@@ -26,7 +26,7 @@ def auth_me(request):
     if not creds:
         return None
     row = get_user_by_login(creds[0])
-    if row and not row["is_admin"] and row["password"] == creds[1]:
+    if row and not row["is_admin"] and verify_password(creds[1], row["password"]):
         return row
     return None
 

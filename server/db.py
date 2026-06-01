@@ -115,7 +115,7 @@ def create_user(data):
             "VALUES (?, ?, ?, ?, ?, ?)",
             (
                 login,
-                password,
+                hash_password(password),
                 str(data["name"]).strip(),
                 str(data["phone"]).strip(),
                 str(data["email"]).strip(),
